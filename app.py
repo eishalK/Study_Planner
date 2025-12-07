@@ -100,7 +100,7 @@ st.subheader("📅 Step 1: Choose Plan Duration")
 duration = st.radio(
     "Do you want to make a 1-week or 2-week plan?", 
     [7, 14], 
-    index=1,
+    index=0,
     horizontal=True
 )
 
@@ -148,9 +148,12 @@ for week in range(1, weeks + 1):
 
 # Filter only days with hours > 0 and convert to time slots
 time_slots = {}
-for key, hours in st.session_state.hours_dict.items():
-    if hours > 0:
-        time_slots[key] = [f"Hour {i+1}" for i in range(int(hours))]
+for week in range(1, weeks + 1):
+    for day in days:
+        key = f"week{week}_{day}"
+        hours = st.session_state.hours_dict.get(key, 0)
+        if hours > 0:
+            time_slots[key] = [f"Hour {i+1}" for i in range(int(hours))]
 
 available_days = list(time_slots.keys())  # pass this to CalendarAgent
 
