@@ -14,7 +14,7 @@ class RevisionAgent:
             study_row["Type"] = "Study"
             rows.append(study_row)
 
-            # Add revision if topic is hard (difficulty >=4)
+            # Add revision if topic is hard (difficulty >=3)
             topic_name = row["Topic"].replace(" (Revision)","")  # clean name
             if self.difficulty.get(topic_name, 3) >= 3:
                 revision_row = row.copy()

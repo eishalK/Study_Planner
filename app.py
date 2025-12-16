@@ -12,7 +12,7 @@ from cores.utils import parse_time_slots
 # 🎨 THEME SETTINGS
 # --------------------------------------------------------
 st.set_page_config(
-    page_title="AI Study Scheduler",
+    page_title="Study Scheduler",
     page_icon="📚",
     layout="wide"
 )
@@ -82,11 +82,11 @@ else:
 st.markdown(
     """
     <h1 style='text-align:center; color:black;'>
-        📚 AI Study Scheduler (Agent-Based)
+        📚 Study Scheduler 
     </h1>
     <p style='text-align:center; font-size:18px;'>
         Convert your short-term academic goals into a structured, realistic<br>
-        day-by-day study schedule using intelligent AI agents.
+        day-by-day study schedule.
     </p>
     <hr>
     """,
